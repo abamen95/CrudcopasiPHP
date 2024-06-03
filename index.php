@@ -17,8 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
                 if (isset($_GET['id'])) {
                     $controladorProducto->mostrarFormularioActualizarProducto($_GET['id']);
                 }
-                break;
-
+            break;
+        case 'eliminarProducto':
+                    if (isset($_GET['id'])) {
+                        $controladorProducto->eliminarProducto($_GET['id']);
+                    }
+            break;
     }
 
     $controladorProducto->mostrarProductos();
@@ -34,7 +38,7 @@ elseif ($_SERVER["REQUEST_METHOD"] === "POST") {
             break;
         case 'actualizar_producto':
                 $controladorProducto->actualizarProducto();
-                break;
+            break;
 
     }
 
